@@ -22,3 +22,23 @@ describe("The sieve of Eratosthenes", function(){
 						       104707, 104711, 104717, 104723, 104729]);
   });
 });
+
+describe("The Multiplication Table", function(){
+  var mt = main.multiplicationTable;
+
+  it("should be empty with null or undefined or emptyList", function(){
+    expect(mt().toJS()).toEqual([])
+    expect(mt(null).toJS()).toEqual([])
+    expect(mt(Immutable.List()).toJS()).toEqual([])
+  });
+
+  it("should have the correct values for [1, 3, 7, 13]", function(){
+    var List = Immutable.List,
+	input = List([1,3,7,13]),
+	output = List([List([1, 3, 7, 13]),
+		       List([3, 9, 21, 39]),
+		       List([7, 21, 49, 91]),
+		       List([13, 39, 91, 169])])
+    expect(mt(input)).toEqual(output);
+  })
+});

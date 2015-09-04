@@ -1,6 +1,4 @@
-var redux = require("redux"),
-    table = require("text-table"),
-    Immutable = require('immutable');
+var Immutable = require('immutable');
 
 
 /*
@@ -33,4 +31,19 @@ function sieve(){
   });
 }
 
-module.exports = {sieve: sieve}
+/*
+ * A multiplication table of `integers x `integers as a vector of vectors. Where
+ * the outermost vector contains the row vectors and the row vectors contain
+ * the row values.
+ *
+ * Takes a Seq (Immutable.js) as `integers argument.
+ */
+function multiplicationTable(integers){
+  var integers = integers || Immutable.List();
+  return integers.map(function(x){
+    return integers.map(function(y){ return x * y;}).toList();
+  }).toList();
+}
+
+module.exports = {sieve: sieve,
+		  multiplicationTable: multiplicationTable}
