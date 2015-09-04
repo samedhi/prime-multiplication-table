@@ -1,0 +1,35 @@
+{
+  "name": "prime-multiplication-table",
+  "version": "0.1.0",
+  "description": 
+  "A program that prints out a multiplication table of the first N (default 10) prime numbers.",
+  "main": "main.js",
+  "scripts": {
+    "watchify-test": 
+    "./node_modules/watchify/bin/cmd.js src/main.js test/test.js -o bundled-test.js",
+    "test": 
+    "./node_modules/karma/bin/karma start",
+    "browserify": 
+    "./node_modules/browserify/bin/cmd.js src/main.js > prime-multiplication-table.js"
+  },
+  "author": "Stephen Cagle <samedhi@gmail.com>",
+  "license": "ISC",
+  "repository": { 
+    "type": "git",
+    "url": "https://github.com/samedhi/prime-multiplication-table.git"
+  },
+  "dependencies": {
+    
+    "browserify": "^11.0.1",
+    "immutable": "^3.7.4",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-jasmine": "^0.3.6",
+    "redux": "^1.0.1"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.2.0",
+    "redux-devtools": "^1.0.2",
+    "watchify": "^3.3.1"
+  }
+}
