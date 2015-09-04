@@ -1,13 +1,8 @@
 var main = require("../src/main.js"),
     Immutable = require('immutable');
 
-describe("The sieve of Eratosthenes", function(){
-  var sieve = main.sieve,
-      primes = null;
-
-  beforeAll(function(){
-    primes = sieve();
-  });
+describe("The Prime Sequence Generator", function(){
+  var primes = main.primeLazySeq();
 
   it("should start at 2", function(){
     expect(primes.get(0)).toBe(2);

@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "description": 
   "A program that prints out a multiplication table of the first N (default 10) prime numbers.",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "watchify-test": 
     "./node_modules/watchify/bin/cmd.js src/main.js test/test.js -o bundled-test.js",
     "test": 
     "./node_modules/karma/bin/karma start",
     "browserify": 
-    "./node_modules/browserify/bin/cmd.js src/main.js > prime-multiplication-table.js"
+    "./node_modules/browserify/bin/cmd.js src/main.js > prime-multiplication-table.js",
+    "print-table":
+    "node ./src/table.js"
   },
   "author": "Stephen Cagle <samedhi@gmail.com>",
   "license": "ISC",

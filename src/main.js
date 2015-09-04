@@ -7,7 +7,7 @@ var Immutable = require('immutable');
  * Advantages are that it can run forever as long as you don't hold onto the head of 
  * the sequence. This is due to the fact that it effectively always uses a constant 
  * amount of memory. Of course, eventually, the time between it finding primes is so 
- * high that this is kind of irrelevant. Also, ultimately, we are limited as well by the
+ * high that this is kind of irrelevant. Also, ultimately, we are limited by the
  * Maximum size an integer can be, which I believe is 2^64 in JS. 
  *
  * Other advantage is that it is a lazy sequence, which I always think is nice.
@@ -18,7 +18,7 @@ var Immutable = require('immutable');
  */
 var integers = Immutable.Range(2, Infinity);
 
-function sieve(){
+function primeLazySeq(){
   return integers.filter(function(v){
     var sqrt  = Math.sqrt(v), 
 	// ints seem to run faster
@@ -45,5 +45,5 @@ function multiplicationTable(integers){
   }).toList();
 }
 
-module.exports = {sieve: sieve,
+module.exports = {primeLazySeq: primeLazySeq,
 		  multiplicationTable: multiplicationTable}
